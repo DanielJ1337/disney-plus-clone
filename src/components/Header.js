@@ -37,7 +37,7 @@ export const Header = () => {
 };
 
 const Nav = styled.nav`
-  height: 70px;
+  height: 4.375rem;
   background: #090b13;
   display: flex;
   align-items: center;
