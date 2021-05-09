@@ -42,6 +42,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 2.25rem;
+  overflow-x: hidden;
 `;
 
 const Logo = styled.img`
@@ -66,7 +67,7 @@ const NavMenu = styled.div`
 
     span {
       font-size: 0.8125rem;
-      letter-spacing: 1.24px;
+      letter-spacing: 1.42px;
       position: relative;
 
       &:after {
@@ -78,6 +79,7 @@ const NavMenu = styled.div`
         bottom: -0.375rem;
         left: 0;
         opacity: 0;
+        transform-origin: left center;
         transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         transform: scaleX(0);
       }
