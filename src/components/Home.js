@@ -4,12 +4,14 @@ import styled from "styled-components";
 
 import { ImageSlider } from "./ImageSlider";
 import { Viewers } from "./Viewers";
+import { Movies } from "./Movies";
 
 export const Home = () => {
   return (
     <Container>
       <ImageSlider />
       <Viewers />
+      <Movies />
     </Container>
   );
 };

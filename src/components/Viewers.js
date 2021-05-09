@@ -6,7 +6,7 @@ export const Viewers = () => {
   return (
     <Container>
       <Wrap>
-        <img src="/images/viewers-disney.png" alt="disney-viewer" />
+        <img src="/images/viewers-disney.png" alt="disney-marvel" />
       </Wrap>
       <Wrap>
         <img src="/images/viewers-marvel.png" alt="disney-marvel" />
@@ -25,7 +25,7 @@ export const Viewers = () => {
 };
 
 const Container = styled.div`
-  margin-top: 1.875rem;
+  margin: 1.875rem 0;
   display: grid;
   padding: 1.875rem 0 1.625rem;
   gap: 1rem;
@@ -35,19 +35,26 @@ const Container = styled.div`
 const Wrap = styled.div`
   border: 0.1875rem solid rgba(249, 249, 249, 0.1);
   border-radius: 1rem;
-
+  /* background-image: linear-gradient(rgb(58, 60, 74), rgb(36, 38, 50)); */
+  background-repeat: no-repeat;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
     rgb(0 0 0 / 73%) 0 16px 10px -10px;
-  /* background-image: linear-gradient(rgb(58, 60, 74), rgb(36, 38, 50)); */
+  overflow: hidden;
+  width: 100%;
   cursor: pointer;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
   &:hover {
+    box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+      rgb(0 0 0 / 73%) 0 16px 10px -10px;
     transform: scale(1.05);
+    border-color: rgba(249, 249, 249, 0.8);
   }
 
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+    /*  */
   }
 `;
