@@ -26,12 +26,8 @@ export const Login = () => {
           <PriceTag>
             €89,90 <span>| Year</span>
           </PriceTag>
-          <CTAButton>
-            <a>SIGN UP NOW</a>
-          </CTAButton>
-          <CTAButton>
-            <a>SAVE ON 12 MONTHS</a>
-          </CTAButton>
+          <CTAButton>SIGN UP NOW</CTAButton>
+          <CTAButton>SAVE ON 12 MONTHS</CTAButton>
         </CTAContainer>
         <ChannelContainer
           src="/images/cta-logo-two.png"
@@ -54,6 +50,7 @@ const Container = styled.div`
     background-position: top;
     content: "";
     position: absolute;
+    opacity: 0.7;
     background-color: #fff !important;
     top: 0;
     left: 0;
@@ -79,7 +76,7 @@ const Heading = styled.div`
   font-weight: bolder;
 `;
 
-const SubHeading = styled.div`
+const SubHeading = styled.p`
   margin-top: 2rem;
   font-size: 1.5rem;
   display: flex;
@@ -112,13 +109,14 @@ const PriceTag = styled.div`
   }
 `;
 
-const CTAButton = styled.button`
+const CTAButton = styled.a`
   background-color: #0063e5;
   cursor: pointer;
   color: #f9f9f9;
   border: none;
-  padding: 1.25rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 0.25rem;
+  text-align: center;
   font-weight: bolder;
   font-size: 0.9rem;
   letter-spacing: 1px;
