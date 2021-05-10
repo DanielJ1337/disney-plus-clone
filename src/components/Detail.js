@@ -1,32 +1,46 @@
 // Details page of a certain movie
 // the user can see further details like name of the movie, length, description and so on
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import db from "../firebase";
 
 import styled from "styled-components";
 
 export const Detail = () => {
+  const { id } = useParams();
+  const [movie, setMovie] = useState();
+
+  useEffect(() => {
+    db.collection("movies")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setMovie(doc.data());
+        } else {
+          // Reroute to Homepage
+        }
+      });
+  }, []);
+
+  console.log(movie);
+
   return (
     <Container>
       <Background>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/64AE0E31C12B8206E2B0BC4BE547A024DF13B78D55129C5690BFF267DEA3DBAB/scale?width=1440&aspectRatio=1.78&format=jpeg"
-          alt="background"
-        />
+        <img src="" alt="background" />
       </Background>
       <ImageTitle>
-        <img
-          src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0840DFE31CC104946D37F14F737E6DE2E6E0E6B4ABCA3B0A051FC6251A16C3FD/scale?width=1440&aspectRatio=1.78"
-          alt="planet"
-        />
+        <img src="" alt="planet" />
       </ImageTitle>
       <Controls>
         <PlayButton>
-          <img src="images/play-icon-black.png" alt="play-icon" />
+          <img src="/images/play-icon-black.png" alt="play-icon" />
           <span>PLAY</span>
         </PlayButton>
         <TrailerButton>
-          <img src="images/play-icon-white.png" alt="play" />
+          <img src="/images/play-icon-white.png" alt="play" />
           <span>TRAILER</span>
         </TrailerButton>
         <PlusButton>

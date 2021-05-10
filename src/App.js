@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 /* Import components */
 import { Header } from "./components/Header";
@@ -19,7 +19,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/detail">
-            <Detail />
+            <Detail path="/detail/:id" />
           </Route>
           <Route path="/">
             <Home />
